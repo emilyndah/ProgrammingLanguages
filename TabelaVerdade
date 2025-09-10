@@ -1,0 +1,13 @@
+
+#p: o aluno NÃO tem APS de Fundamentos Matemáticos às 19h
+#q: a assistente recomenda conteúdo de Lógica Proposicional
+
+print ("P    | Q    | -P   | P == Q ")
+
+print("-" * 30)
+
+valores = [True, False]
+
+for P in valores:
+ for Q in valores:
+    print(P, "|", Q, "|", not P, "|", P == Q)
