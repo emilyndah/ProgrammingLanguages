@@ -1,0 +1,21 @@
+from datetime import datetime  # Import the datetime module to work with dates
+
+# Deadline Alert
+subject = input("Enter the subject: ")  # Ask the user to enter the subject
+date_str = input("Enter the date (DD/MM/YYYY): ")  # Ask the user to enter the current date
+deadline_str = input("Enter the deadline (DD/MM/YYYY): ")  # Ask the user to enter the deadline
+
+try:
+    # Convert the input strings to date objects
+    date = datetime.strptime(date_str, '%d/%m/%Y').date()
+    deadline = datetime.strptime(deadline_str, '%d/%m/%Y').date()
+
+    # Compare the current date with the deadline
+    if date < deadline:
+        print("There is still time to do the activities for", subject)  # Date is before deadline
+    elif date == deadline:
+        print("The activities for", subject, "need to be done today")  # Date is exactly the deadline
+    else:
+        print("The activities for", subject, "are late")  # Date is after deadline
+except ValueError:
+    print("Invalid date format. Please use DD/MM/YYYY.")  # Handle wrong date format input
