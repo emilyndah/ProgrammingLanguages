@@ -1,13 +1,28 @@
+# conjunção = e = and = ∧
 
-#p: o aluno NÃO tem APS de Fundamentos Matemáticos às 19h
-#q: a assistente recomenda conteúdo de Lógica Proposicional
+# disjunção = ou = or = V
 
-print ("P    | Q    | -P   | P == Q ")
+# negação = não = not = -
 
-print("-" * 30)
+# bicondicional = == = ⇔
 
+# condicional = ⮕
+
+# Definindo conectivos básicos
+def conjuncao(p, q):
+  return p and q
+def disjuncao(p, q):
+  return p or q
+def condicional(p, q):
+  return (not p) or q
+def bicondicional(p, q):
+  return p == q
+def negacao(p):
+  return not p
+
+# Geração automática de tabela-verdade
 valores = [True, False]
-
-for P in valores:
- for Q in valores:
-    print(P, "|", Q, "|", not P, "|", P == Q)
+print("p    |  q   |p -> q| not p")
+for p in valores:
+  for q in valores:
+   print(p, "|", q, "|", condicional(p, q), "|", negacao(p))
